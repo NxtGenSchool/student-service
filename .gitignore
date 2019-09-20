@@ -1,0 +1,12 @@
+# General macOs files
+.DS_Store
+
+# Intellij
+.idea/
+*.iml
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+/target
