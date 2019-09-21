@@ -7,10 +7,9 @@ spring:
   h2:
     console:
       enabled: true
-  security:
-    user:
-      name: user
-      password: password
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
+  datasource:
+    platform: h2
+    initialization-mode: embedded
