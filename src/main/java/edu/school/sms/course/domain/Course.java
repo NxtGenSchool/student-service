@@ -8,18 +8,18 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long uidPk;
+    private Long uidPk;
     private String name;
     private String description;
     private String code;
     @OneToMany(mappedBy = "course")
     private List<Book> books;
 
-    public long getUidPk() {
+    public Long getUidPk() {
         return uidPk;
     }
 
-    public void setUidPk(long uidPk) {
+    public void setUidPk(Long uidPk) {
         this.uidPk = uidPk;
     }
 

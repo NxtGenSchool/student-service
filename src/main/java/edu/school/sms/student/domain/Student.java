@@ -11,7 +11,8 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long uidPk;
+    @Column(name = "UID_PK")
+    private Long uidPk;
     private String firstName;
     private String middleName;
     private String lastName;
@@ -22,14 +23,18 @@ public class Student {
     private String phoneNumber;
     @OneToOne(mappedBy = "student")
     private Address address;
-    @OneToMany
+    @ManyToMany
+    @JoinTable(
+            name="STUDENT_SCHOOL_CLASSES",
+            joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),
+            inverseJoinColumns=@JoinColumn(name="SCHOOL_CLASSES_UID_PK", referencedColumnName="UID_PK"))
     private List<SchoolClass> schoolClasses;
 
-    public long getUidPk() {
+    public Long getUidPk() {
         return uidPk;
     }
 
-    public void setUidPk(long uidPk) {
+    public void setUidPk(Long uidPk) {
         this.uidPk = uidPk;
     }
 

@@ -1,7 +1,6 @@
 package edu.school.sms.Schedule.domain;
 
 import edu.school.sms.course.domain.Course;
-import edu.school.sms.student.domain.Student;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -13,7 +12,8 @@ public class SchoolClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long uidPk;
+    @Column(name = "UID_PK")
+    private Long uidPk;
     @OneToOne
     private Course course;
     private long classId;
@@ -24,11 +24,11 @@ public class SchoolClass {
     private LocalDate startDate;
     private LocalDate endDate;
 
-    public long getUidPk() {
+    public Long getUidPk() {
         return uidPk;
     }
 
-    public void setUidPk(long uidPk) {
+    public void setUidPk(Long uidPk) {
         this.uidPk = uidPk;
     }
 

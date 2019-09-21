@@ -8,7 +8,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long uidPk;
+    private Long uidPk;
     private String addressLineOne;
     private String addressLineTwo;
     private String city;
@@ -19,11 +19,11 @@ public class Address {
     @OneToOne
     private Student student;
 
-    public long getUidPk() {
+    public Long getUidPk() {
         return uidPk;
     }
 
-    public void setUidPk(long uidPk) {
+    public void setUidPk(Long uidPk) {
         this.uidPk = uidPk;
     }
 

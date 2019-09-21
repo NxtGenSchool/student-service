@@ -9,17 +9,17 @@ public class SchoolClassTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long uidPk;
+    private Long uidPk;
     private DayOfWeek dayOfWeek;
     private LocalTime localTime;
     @ManyToOne
     private SchoolClass schoolClass;
 
-    public long getUidPk() {
+    public Long getUidPk() {
         return uidPk;
     }
 
-    public void setUidPk(long uidPk) {
+    public void setUidPk(Long uidPk) {
         this.uidPk = uidPk;
     }
 
