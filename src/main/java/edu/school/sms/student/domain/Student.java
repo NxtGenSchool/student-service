@@ -1,7 +1,10 @@
 package edu.school.sms.student.domain;
 
+import edu.school.sms.Schedule.domain.SchoolClass;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -19,6 +22,8 @@ public class Student {
     private String phoneNumber;
     @OneToOne(mappedBy = "student")
     private Address address;
+    @OneToMany
+    private List<SchoolClass> schoolClasses;
 
     public long getUidPk() {
         return uidPk;
@@ -98,5 +103,13 @@ public class Student {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<SchoolClass> getSchoolClasses() {
+        return schoolClasses;
+    }
+
+    public void setSchoolClasses(List<SchoolClass> schoolClasses) {
+        this.schoolClasses = schoolClasses;
     }
 }
