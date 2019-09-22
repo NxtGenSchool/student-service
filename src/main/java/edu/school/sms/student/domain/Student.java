@@ -27,11 +27,12 @@ public class Student {
     @OneToOne(mappedBy = "student")
     @JsonManagedReference
     private Address address;
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany
     @JoinTable(
             name="CLASS_ENROLLMENT",
             joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),
             inverseJoinColumns=@JoinColumn(name="SCHOOL_CLASSES_UID_PK", referencedColumnName="UID_PK"))
+    @JsonIgnore
     private List<SchoolClass> schoolClasses;
 
     public Long getUidPk() {
