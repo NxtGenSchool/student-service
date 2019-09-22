@@ -29,7 +29,7 @@ public class Student {
     private Address address;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name="STUDENT_SCHOOL_CLASSES",
+            name="CLASS_ENROLLMENT",
             joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),
             inverseJoinColumns=@JoinColumn(name="SCHOOL_CLASSES_UID_PK", referencedColumnName="UID_PK"))
     private List<SchoolClass> schoolClasses;
