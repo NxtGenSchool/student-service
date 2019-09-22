@@ -27,7 +27,7 @@ public class Student {
     @OneToOne(mappedBy = "student")
     @JsonManagedReference
     private Address address;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name="STUDENT_SCHOOL_CLASSES",
             joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),

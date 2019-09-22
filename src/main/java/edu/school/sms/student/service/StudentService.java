@@ -20,4 +20,8 @@ public class StudentService {
     public List<Student> findAll() {
         return studentRepository.findAll();
     }
+
+    public Student findByStudentId(String studentId) {
+        return studentRepository.findByStudentId(studentId);
+    }
 }
