@@ -7,7 +7,7 @@
 ### Run
 1. Navigate to the project folder
 2. Execute `mvn spring-boot:run`
-3. Use the provided postman collection to make requests
+3. Use the provided [`postman collection`](./postman/School%20Management%20System.postman_collection.json) to make requests
 
 Note: 
 - The application currently uses [`import.sql`](./src/main/resources/import.sql) to load data. There is no external mechanism to load data.  

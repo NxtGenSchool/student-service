@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "8b968bd5-c52a-47cb-92b4-d050f65fd36a",
+		"name": "School Management System",
+		"description": "Basic API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/students",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Student By student  id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/students/834567",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students",
+						"834567"
+					]
+				},
+				"description": "get details of a particular student by student id"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Class Schedule for a particulat student using student id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/students/834567/classes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students",
+						"834567",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/courses",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get course by course code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/courses/CS230",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"courses",
+						"CS230"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8da977eb-7337-4a74-a18b-43ab6aefc4b5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ca6fd8ba-3d5b-44c1-b2f6-6d0db3b44c80",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5ff2380a-fa40-4b33-852b-edebb8602c69",
+			"key": "base_url",
+			"value": "http://localhost:4050",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
