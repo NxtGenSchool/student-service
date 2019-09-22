@@ -1,5 +1,7 @@
 package edu.school.sms.Schedule.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import edu.school.sms.course.domain.Course;
 
 import javax.persistence.*;
@@ -13,12 +15,14 @@ public class SchoolClass {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "UID_PK")
+    @JsonIgnore
     private Long uidPk;
     @OneToOne
     private Course course;
     private long classId;
     private String roomNumber;
     @OneToMany(mappedBy = "schoolClass")
+    @JsonManagedReference
     private List<SchoolClassTime> schoolClassTimes;
     private Duration duration;
     private LocalDate startDate;

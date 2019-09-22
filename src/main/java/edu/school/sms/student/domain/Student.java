@@ -1,5 +1,7 @@
 package edu.school.sms.student.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import edu.school.sms.Schedule.domain.SchoolClass;
 
 import javax.persistence.*;
@@ -12,6 +14,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "UID_PK")
+    @JsonIgnore
     private Long uidPk;
     private String firstName;
     private String middleName;
@@ -22,6 +25,7 @@ public class Student {
     private String emailAddress;
     private String phoneNumber;
     @OneToOne(mappedBy = "student")
+    @JsonManagedReference
     private Address address;
     @ManyToMany
     @JoinTable(

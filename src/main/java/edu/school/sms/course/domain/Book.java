@@ -1,13 +1,15 @@
 package edu.school.sms.course.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long uidPk;
     private String title;
     private String author;
@@ -47,6 +49,7 @@ public class Book {
         this.isbnNumber = isbnNumber;
     }
 
+    @JsonIgnore
     public Course getCourses() {
         return course;
     }

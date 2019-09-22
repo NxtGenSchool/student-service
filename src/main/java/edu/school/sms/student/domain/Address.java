@@ -1,5 +1,8 @@
 package edu.school.sms.student.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -8,6 +11,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long uidPk;
     private String addressLineOne;
     private String addressLineTwo;
@@ -17,6 +21,7 @@ public class Address {
     private String postalCode;
     @NotNull
     @OneToOne
+    @JsonBackReference
     private Student student;
 
     public Long getUidPk() {

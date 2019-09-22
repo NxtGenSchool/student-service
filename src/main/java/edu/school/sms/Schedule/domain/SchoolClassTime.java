@@ -1,5 +1,8 @@
 package edu.school.sms.Schedule.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -9,10 +12,12 @@ public class SchoolClassTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long uidPk;
     private DayOfWeek dayOfWeek;
     private LocalTime localTime;
     @ManyToOne
+    @JsonBackReference
     private SchoolClass schoolClass;
 
     public Long getUidPk() {
