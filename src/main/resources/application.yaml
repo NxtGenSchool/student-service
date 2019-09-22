@@ -1,6 +1,9 @@
+
 spring:
   profiles:
     active: development
+server:
+  port: 4050
 ---
 spring:
   profiles: development
