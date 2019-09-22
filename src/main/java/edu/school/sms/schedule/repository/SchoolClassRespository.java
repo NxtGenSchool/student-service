@@ -1,6 +1,6 @@
-package edu.school.sms.Schedule.repository;
+package edu.school.sms.schedule.repository;
 
-import edu.school.sms.Schedule.domain.SchoolClass;
+import edu.school.sms.schedule.domain.SchoolClass;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
