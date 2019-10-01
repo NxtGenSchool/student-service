@@ -2,7 +2,7 @@ package edu.school.sms.schedule.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import edu.school.sms.course.domain.Course;
+import edu.school.sms.course.domain.Subject;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -18,7 +18,7 @@ public class SchoolClass {
     @JsonIgnore
     private Long uidPk;
     @OneToOne
-    private Course course;
+    private Subject subject;
     private long classId;
     private String roomNumber;
     @OneToMany(mappedBy = "schoolClass")
@@ -36,12 +36,12 @@ public class SchoolClass {
         this.uidPk = uidPk;
     }
 
-    public Course getCourse() {
-        return course;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
     public long getClassId() {

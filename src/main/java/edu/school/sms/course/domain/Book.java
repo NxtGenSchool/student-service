@@ -15,7 +15,7 @@ public class Book {
     private String author;
     private String isbnNumber;
     @ManyToOne
-    private Course course;
+    private Subject subject;
 
     public Long getUidPk() {
         return uidPk;
@@ -50,11 +50,11 @@ public class Book {
     }
 
     @JsonIgnore
-    public Course getCourses() {
-        return course;
+    public Subject getSubject() {
+        return subject;
     }
 
-    public void setCourses(Course course) {
-        this.course = course;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }

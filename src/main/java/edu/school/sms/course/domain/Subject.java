@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Course {
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +15,7 @@ public class Course {
     private String name;
     private String description;
     private String code;
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "subject")
     private List<Book> books;
 
     public Long getUidPk() {
