@@ -1,4 +1,4 @@
-package edu.school.sms.schedule.domain;
+package edu.school.sms.course.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;

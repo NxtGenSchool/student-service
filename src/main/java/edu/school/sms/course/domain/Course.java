@@ -1,8 +1,7 @@
-package edu.school.sms.schedule.domain;
+package edu.school.sms.course.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import edu.school.sms.course.domain.Subject;
 
 import javax.persistence.*;
 import java.time.Duration;

@@ -1,6 +1,6 @@
 package edu.school.sms.student.api;
 
-import edu.school.sms.schedule.domain.Course;
+import edu.school.sms.course.domain.Course;
 import edu.school.sms.student.domain.Student;
 import edu.school.sms.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;

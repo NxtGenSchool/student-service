@@ -2,7 +2,7 @@ package edu.school.sms.student.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import edu.school.sms.schedule.domain.Course;
+import edu.school.sms.course.domain.Course;
 
 import javax.persistence.*;
 import java.time.LocalDate;

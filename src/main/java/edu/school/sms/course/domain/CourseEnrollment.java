@@ -1,4 +1,4 @@
-package edu.school.sms.schedule.domain;
+package edu.school.sms.course.domain;
 
 import javax.persistence.*;
 
