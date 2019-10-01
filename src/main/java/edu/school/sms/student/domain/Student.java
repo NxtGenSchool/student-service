@@ -29,7 +29,7 @@ public class Student {
     private Address address;
     @ManyToMany
     @JoinTable(
-            name="CLASS_ENROLLMENT",
+            name="COURSE_ENROLLMENT",
             joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),
             inverseJoinColumns=@JoinColumn(name="COURSE_UID_PK", referencedColumnName="UID_PK"))
     @JsonIgnore

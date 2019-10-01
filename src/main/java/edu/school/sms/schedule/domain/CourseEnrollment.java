@@ -3,8 +3,8 @@ package edu.school.sms.schedule.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CLASS_ENROLLMENT")
-public class ClassEnrollment {
+@Table(name = "COURSE_ENROLLMENT")
+public class CourseEnrollment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
