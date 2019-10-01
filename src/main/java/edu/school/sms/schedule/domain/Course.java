@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-public class SchoolClass {
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,9 +21,9 @@ public class SchoolClass {
     private Subject subject;
     private long classId;
     private String roomNumber;
-    @OneToMany(mappedBy = "schoolClass")
+    @OneToMany(mappedBy = "course")
     @JsonManagedReference
-    private List<SchoolClassTime> schoolClassTimes;
+    private List<CourseTime> courseTimes;
     private Duration duration;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -60,12 +60,12 @@ public class SchoolClass {
         this.roomNumber = roomNumber;
     }
 
-    public List<SchoolClassTime> getSchoolClassTimes() {
-        return schoolClassTimes;
+    public List<CourseTime> getCourseTimes() {
+        return courseTimes;
     }
 
-    public void setSchoolClassTimes(List<SchoolClassTime> schoolClassTimes) {
-        this.schoolClassTimes = schoolClassTimes;
+    public void setCourseTimes(List<CourseTime> courseTimes) {
+        this.courseTimes = courseTimes;
     }
 
     public Duration getDuration() {

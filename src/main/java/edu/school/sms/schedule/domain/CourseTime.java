@@ -8,7 +8,7 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 @Entity
-public class SchoolClassTime {
+public class CourseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class SchoolClassTime {
     private LocalTime localTime;
     @ManyToOne
     @JsonBackReference
-    private SchoolClass schoolClass;
+    private Course course;
 
     public Long getUidPk() {
         return uidPk;
@@ -44,11 +44,11 @@ public class SchoolClassTime {
         this.localTime = localTime;
     }
 
-    public SchoolClass getSchoolClass() {
-        return schoolClass;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setSchoolClass(SchoolClass schoolClass) {
-        this.schoolClass = schoolClass;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }

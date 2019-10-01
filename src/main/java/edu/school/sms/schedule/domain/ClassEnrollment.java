@@ -11,8 +11,8 @@ public class ClassEnrollment {
     private Long uidPk;
     @Column(name = "STUDENT_UID_PK")
     private Long studentUidPk;
-    @Column(name="SCHOOL_CLASSES_UID_PK")
-    private Long schoolClassUidPk;
+    @Column(name="COURSE_UID_PK")
+    private Long courseUidPk;
 
     public Long getUidPk() {
         return uidPk;
@@ -30,11 +30,11 @@ public class ClassEnrollment {
         this.studentUidPk = studentUidPk;
     }
 
-    public Long getSchoolClassUidPk() {
-        return schoolClassUidPk;
+    public Long getCourseUidPk() {
+        return courseUidPk;
     }
 
-    public void setSchoolClassUidPk(Long schoolClassUidPk) {
-        this.schoolClassUidPk = schoolClassUidPk;
+    public void setCourseUidPk(Long courseUidPk) {
+        this.courseUidPk = courseUidPk;
     }
 }

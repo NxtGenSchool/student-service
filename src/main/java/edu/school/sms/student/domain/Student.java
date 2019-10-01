@@ -2,7 +2,7 @@ package edu.school.sms.student.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import edu.school.sms.schedule.domain.SchoolClass;
+import edu.school.sms.schedule.domain.Course;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -31,9 +31,9 @@ public class Student {
     @JoinTable(
             name="CLASS_ENROLLMENT",
             joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),
-            inverseJoinColumns=@JoinColumn(name="SCHOOL_CLASSES_UID_PK", referencedColumnName="UID_PK"))
+            inverseJoinColumns=@JoinColumn(name="COURSE_UID_PK", referencedColumnName="UID_PK"))
     @JsonIgnore
-    private List<SchoolClass> schoolClasses;
+    private List<Course> courses;
 
     public Long getUidPk() {
         return uidPk;
@@ -115,11 +115,11 @@ public class Student {
         this.address = address;
     }
 
-    public List<SchoolClass> getSchoolClasses() {
-        return schoolClasses;
+    public List<Course> getCourses() {
+        return courses;
     }
 
-    public void setSchoolClasses(List<SchoolClass> schoolClasses) {
-        this.schoolClasses = schoolClasses;
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
     }
 }
