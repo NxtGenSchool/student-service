@@ -18,14 +18,11 @@ public class Course {
     private Long uidPk;
     @OneToOne
     private Subject subject;
-    private long classId;
-    private String roomNumber;
-    @OneToMany(mappedBy = "course")
-    @JsonManagedReference
-    private List<CourseTime> courseTimes;
-    private Duration duration;
     private LocalDate startDate;
     private LocalDate endDate;
+    @OneToMany(mappedBy = "course")
+    @JsonManagedReference
+    private List<PeriodSeries> periodSeries;
 
     public Long getUidPk() {
         return uidPk;
@@ -43,38 +40,6 @@ public class Course {
         this.subject = subject;
     }
 
-    public long getClassId() {
-        return classId;
-    }
-
-    public void setClassId(long classId) {
-        this.classId = classId;
-    }
-
-    public String getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public List<CourseTime> getCourseTimes() {
-        return courseTimes;
-    }
-
-    public void setCourseTimes(List<CourseTime> courseTimes) {
-        this.courseTimes = courseTimes;
-    }
-
-    public Duration getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Duration duration) {
-        this.duration = duration;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -89,5 +54,13 @@ public class Course {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public List<PeriodSeries> getPeriodSeries() {
+        return periodSeries;
+    }
+
+    public void setPeriodSeries(List<PeriodSeries> periodSeries) {
+        this.periodSeries = periodSeries;
     }
 }
