@@ -24,7 +24,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Student By student  id",
+			"name": "Get a student",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -43,35 +43,37 @@
 			"response": []
 		},
 		{
-			"name": "Get Class Schedule for a particulat student using student id",
+			"name": "Get Schedule",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/students/834567/classes",
+					"raw": "{{base_url}}/students/834567/schedule",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"students",
 						"834567",
-						"classes"
+						"schedule"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get all courses",
+			"name": "Get all courses of a student",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/courses",
+					"raw": "{{base_url}}/students/834567/courses",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
+						"students",
+						"834567",
 						"courses"
 					]
 				}
@@ -79,17 +81,36 @@
 			"response": []
 		},
 		{
-			"name": "Get course by course code",
+			"name": "Get all  subjects taken by a student",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/courses/CS230",
+					"raw": "{{base_url}}/students/834567/subjects",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"courses",
+						"students",
+						"834567",
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get subject details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/subjects/CS230",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"subjects",
 						"CS230"
 					]
 				}
@@ -121,7 +142,7 @@
 	],
 	"variable": [
 		{
-			"id": "5ff2380a-fa40-4b33-852b-edebb8602c69",
+			"id": "97af4059-876c-481f-9067-1e65aa64adb2",
 			"key": "base_url",
 			"value": "http://localhost:4050",
 			"type": "string"
