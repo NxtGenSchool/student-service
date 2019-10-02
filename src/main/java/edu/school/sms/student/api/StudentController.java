@@ -1,6 +1,8 @@
 package edu.school.sms.student.api;
 
 import edu.school.sms.course.domain.Course;
+import edu.school.sms.course.domain.Period;
+import edu.school.sms.course.domain.Subject;
 import edu.school.sms.student.domain.Student;
 import edu.school.sms.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class StudentController {
@@ -31,8 +34,19 @@ public class StudentController {
         return studentService.findByStudentId(studentId);
     }
 
-    @GetMapping(path = "/students/{studentId}/classes", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<Course> findEnrolledClassesByStudentId(@PathVariable String studentId) {
+    @GetMapping(path = "/students/{studentId}/courses", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<Course> findEnrolledCourses(@PathVariable String studentId) {
         return studentService.findByStudentId(studentId).getCourses();
+    }
+
+    @GetMapping(path = "/students/{studentId}/subjects", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<Subject> findEnrolledSubjects(@PathVariable String studentId) {
+        return studentService.findByStudentId(studentId).getCourses().stream()
+                .map(Course::getSubject).collect(Collectors.toList());
+    }
+
+    @GetMapping(path = "/students/{studentId}/schedule", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<Period> findSchedule(@PathVariable String studentId) {
+        return studentService.findSchedule(studentId);
     }
 }
