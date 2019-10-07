@@ -10,3 +10,6 @@
 mvnw
 mvnw.cmd
 /target
+
+#jenv
+.java-version
