@@ -1,7 +1,9 @@
 package edu.school.sms.course.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import edu.school.sms.teacher.domain.Teacher;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -23,6 +25,9 @@ public class Course {
     @OneToMany(mappedBy = "course")
     @JsonManagedReference
     private List<PeriodSeries> periodSeries;
+    @ManyToOne
+    @JsonManagedReference
+    private Teacher teacher;
 
     public Long getUidPk() {
         return uidPk;
@@ -62,5 +67,13 @@ public class Course {
 
     public void setPeriodSeries(List<PeriodSeries> periodSeries) {
         this.periodSeries = periodSeries;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 }
