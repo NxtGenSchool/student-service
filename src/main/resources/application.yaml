@@ -7,6 +7,22 @@ server:
 ---
 spring:
   profiles: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nxtgen-school
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+#   Need to set below property due to issue in hibernate: https://hibernate.atlassian.net/browse/HHH-12368
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+---
+spring:
+  profiles: test
   h2:
     console:
       enabled: true
