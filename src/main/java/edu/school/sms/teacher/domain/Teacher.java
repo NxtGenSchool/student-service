@@ -1,12 +1,10 @@
 package edu.school.sms.teacher.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import edu.school.sms.course.domain.Course;
+import edu.school.sms.common.domain.CourseIdentifier;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Teacher {
@@ -23,9 +21,8 @@ public class Teacher {
     private String emailAddress;
     private String phoneNumber;
     private String officeLocation;
-    @OneToMany(mappedBy = "teacher")
-    @JsonBackReference
-    private List<Course> courses;
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<CourseIdentifier> courseIdentifiers;
 
     public Long getUidPk() {
         return uidPk;
@@ -91,11 +88,11 @@ public class Teacher {
         this.officeLocation = officeLocation;
     }
 
-    public List<Course> getCourses() {
-        return courses;
+    public Set<CourseIdentifier> getCourseIdentifiers() {
+        return courseIdentifiers;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setCourseIdentifiers(Set<CourseIdentifier> courseIdentifiers) {
+        this.courseIdentifiers = courseIdentifiers;
     }
 }

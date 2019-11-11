@@ -13,7 +13,7 @@ spring:
     password: admin
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
 #   Need to set below property due to issue in hibernate: https://hibernate.atlassian.net/browse/HHH-12368
     properties:
       hibernate:

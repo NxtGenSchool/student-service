@@ -2,11 +2,11 @@ package edu.school.sms.student.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import edu.school.sms.course.domain.Course;
+import edu.school.sms.common.domain.CourseIdentifier;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -27,13 +27,8 @@ public class Student {
     @OneToOne(mappedBy = "student")
     @JsonManagedReference
     private Address address;
-    @ManyToMany
-    @JoinTable(
-            name="COURSE_ENROLLMENT",
-            joinColumns=@JoinColumn(name="STUDENT_UID_PK", referencedColumnName="UID_PK"),
-            inverseJoinColumns=@JoinColumn(name="COURSE_UID_PK", referencedColumnName="UID_PK"))
-    @JsonIgnore
-    private List<Course> courses;
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<CourseIdentifier> courseIdentifiers;
 
     public Long getUidPk() {
         return uidPk;
@@ -115,11 +110,11 @@ public class Student {
         this.address = address;
     }
 
-    public List<Course> getCourses() {
-        return courses;
+    public Set<CourseIdentifier> getCourseIdentifiers() {
+        return courseIdentifiers;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setCourseIdentifiers(Set<CourseIdentifier> courseIdentifiers) {
+        this.courseIdentifiers = courseIdentifiers;
     }
 }
