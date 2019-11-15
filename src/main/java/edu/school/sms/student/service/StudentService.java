@@ -1,8 +1,8 @@
 package edu.school.sms.student.service;
 
 import edu.school.sms.common.client.CourseClient;
-import edu.school.sms.student.domain.Student;
 import edu.school.sms.common.domain.external.Course;
+import edu.school.sms.student.domain.Student;
 import edu.school.sms.student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class StudentService {
         return studentRepository.findByStudentId(studentId);
     }
 
-    public List<Course> findCoursesByStudentId(String studentId) {
+    public List<Course> findCourseByStudentId(String studentId) {
         Student student = findByStudentId(studentId);
         return courseClient.getCourses(student.getCourseIdentifiers());
     }
@@ -62,7 +62,7 @@ public class StudentService {
 //            nextPeriodDate = today.plusDays(7 - daysRemainingToNextPeriodThisWeek);
 //        }
 //
-//        while (nextPeriodDate.isBefore(periodSeries.getCourse().getEndDate())) {
+//        while (nextPeriodDate.isBefore(periodSeries.getCourses().getEndDate())) {
 //            Period period = createPeriod(periodSeries);
 //            period.setDate(nextPeriodDate);
 //            nextPeriodDate = nextPeriodDate.plusDays(7);
@@ -77,8 +77,8 @@ public class StudentService {
 //        period.setLocation(periodSeries.getLocation());
 //        period.setStartTime(periodSeries.getStartTime());
 //        period.setEndTime(periodSeries.getEndTime());
-//        period.setSubjectCode(periodSeries.getCourse().getSubject().getCode());
-//        period.setSubjectName(periodSeries.getCourse().getSubject().getCode());
+//        period.setSubjectCode(periodSeries.getCourses().getSubject().getCode());
+//        period.setSubjectName(periodSeries.getCourses().getSubject().getCode());
 //        return period;
 //    }
 //

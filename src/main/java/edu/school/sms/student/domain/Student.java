@@ -6,7 +6,7 @@ import edu.school.sms.common.domain.CourseIdentifier;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -28,7 +28,7 @@ public class Student {
     @JsonManagedReference
     private Address address;
     @ElementCollection(fetch = FetchType.EAGER)
-    private Set<CourseIdentifier> courseIdentifiers;
+    private List<CourseIdentifier> courseIdentifiers;
 
     public Long getUidPk() {
         return uidPk;
@@ -110,11 +110,11 @@ public class Student {
         this.address = address;
     }
 
-    public Set<CourseIdentifier> getCourseIdentifiers() {
+    public List<CourseIdentifier> getCourseIdentifiers() {
         return courseIdentifiers;
     }
 
-    public void setCourseIdentifiers(Set<CourseIdentifier> courseIdentifiers) {
+    public void setCourseIdentifiers(List<CourseIdentifier> courseIdentifiers) {
         this.courseIdentifiers = courseIdentifiers;
     }
 }
