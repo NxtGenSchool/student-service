@@ -22,11 +22,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
-                .anyRequest().authenticated().and()
-                .exceptionHandling().and().sessionManagement()
+                .authorizeRequests().antMatchers("/**").permitAll()
+//                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
+//                .anyRequest().authenticated().and()
+                .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.headers().frameOptions().sameOrigin();
-        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }
