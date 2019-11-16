@@ -1,7 +1,7 @@
 package edu.school.sms.student.api;
 
-import edu.school.sms.student.domain.Student;
 import edu.school.sms.common.domain.external.Course;
+import edu.school.sms.student.domain.Student;
 import edu.school.sms.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -33,7 +33,7 @@ public class StudentController {
 
     @GetMapping(path = "/students/{studentId}/courses", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Course> findEnrolledCourses(@PathVariable String studentId) {
-        return studentService.findCoursesByStudentId(studentId);
+        return studentService.findCourseByStudentId(studentId);
     }
 
 //    @GetMapping(path = "/students/{studentId}/schedule", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
