@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.school</groupId>
-    <artifactId>sms</artifactId>
+    <artifactId>student-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>School Management System</name>
+    <name>student service</name>
     <description>A System to manage school</description>
 
     <properties>

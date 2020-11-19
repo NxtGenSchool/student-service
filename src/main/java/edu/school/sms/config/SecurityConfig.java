@@ -2,7 +2,6 @@ package edu.school.sms.config;
 
 import edu.school.sms.filters.AuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -22,12 +21,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests().antMatchers("/**").permitAll()
-//                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
-//                .anyRequest().authenticated().and()
-                .and().sessionManagement()
+//                .authorizeRequests().antMatchers("/**").permitAll()
+                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
+                .anyRequest().authenticated().and()
+                .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.headers().frameOptions().sameOrigin();
-//        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }

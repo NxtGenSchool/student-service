@@ -14,7 +14,7 @@ import java.util.Set;
 public class CourseClient {
 
     private RestTemplate restTemplate;
-    private String CourseUrl = "http://localhost:4060/courses";
+    private String CourseUrl = "http://course-service/courses";
 
     @Autowired
     public CourseClient(RestTemplate restTemplate) {
